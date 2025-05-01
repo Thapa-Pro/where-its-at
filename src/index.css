@@ -1,0 +1,27 @@
+/* index.css */
+
+/* Reset default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Apply a base font and background */
+  body,
+  html,
+  #root {
+    height: 100%;
+    width: 100%;
+    background-color: #1a1330; /* Matches splash screen color */
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden; /* Prevent scrolling and border */
+  }
+  
+  /* Make sure root layout works properly */
+  #root {
+    display: flex;
+    flex-direction: column;
+  }
+  
