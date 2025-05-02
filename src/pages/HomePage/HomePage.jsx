@@ -1,18 +1,16 @@
-// src/pages/HomePage/HomePage.jsx
-
 import React, { useState } from "react";
 import "./homePage.css";
-import eventsData from "../../utils/events";
-import EventCard from "../../components/EventCard/EventCard";
 import { FiSearch } from "react-icons/fi";
-import { useEventData } from "../../hooks/useEventData";
+import EventCard from "../../components/EventCard/EventCard";
+import useEventData from "../../hooks/useEventData";
 
 const HomePage = () => {
-    const { events, loading, error } = useEventData();
     const [search, setSearch] = useState("");
+    const { events = [], loading, error } = useEventData();
 
-    const filteredEvents = eventsData.filter(event =>
-        event.title.toLowerCase().includes(search.toLowerCase())
+    // Filter using event.name (since it's the band name)
+    const filteredEvents = events.filter((event) =>
+        search.trim() === "" || (event.name || "").toLowerCase().includes(search.toLowerCase())
     );
 
     return (
@@ -29,8 +27,11 @@ const HomePage = () => {
                 />
             </div>
 
+            {loading && <p className="feedback">Loading events...</p>}
+            {error && <p className="feedback error">Error: {error}</p>}
+
             <div className="event-list">
-                {filteredEvents.map(event => (
+                {filteredEvents.map((event) => (
                     <EventCard key={event.id} event={event} />
                 ))}
             </div>

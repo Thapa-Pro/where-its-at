@@ -2,9 +2,13 @@ import React from "react";
 import "./eventCard.css";
 
 const EventCard = ({ event }) => {
-    const date = new Date(event.date);
-    const day = date.getDate();
-    const month = date.toLocaleString("en-US", { month: "short" }).toUpperCase();
+    const { name, where, price, when } = event;
+
+    // Split the date like "21 Mars" -> ["21", "Mars"]
+    const [day, rawMonth] = when?.date?.split(" ") || ["??", "???"];
+
+    // Take first 3 letters and uppercase them
+    const month = rawMonth?.substring(0, 3).toUpperCase();
 
     return (
         <div className="event-card">
@@ -14,15 +18,15 @@ const EventCard = ({ event }) => {
             </div>
 
             <div className="event-info">
-                <h3 className="band">{event.band}</h3>
-                <p className="location">{event.location}</p>
+                <h3 className="band">{name || "Unknown Band"}</h3>
+                <p className="location">{where || "Unknown location"}</p>
                 <p className="time">
-                    {event.startTime} - {event.endTime}
+                    {(when?.from && when?.to) ? `${when.from} - ${when.to}` : "?? - ??"}
                 </p>
             </div>
 
             <div className="price">
-                {event.price} <span>sek</span>
+                {price} <span>sek</span>
             </div>
         </div>
     );
