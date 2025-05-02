@@ -1,37 +1,56 @@
+/* src/pages/HomePage/homePage.css */
+
 .home {
-  padding: 20px;
-  color: white;
-  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 48px; /* top | sides | bottom */
+  height: 100vh; /* Full height for scroll control */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent accidental overflow */
 }
 
 .section-title {
-  font-family: 'Sansita One', cursive;
-  color: #ff4fba;
-  font-size: 28px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f25cbd;
   text-align: center;
-  margin-bottom: 16px;
+  margin: 8px 0 16px;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
-  background-color: #392c5c;
+  gap: 8px;
+  background-color: #2d2348;
   padding: 8px 12px;
   border-radius: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .search-icon {
-  color: white;
-  margin-right: 8px;
+  color: #aaa;
 }
 
 .search-bar input {
+  flex: 1;
   background: transparent;
   border: none;
   color: white;
+  font-size: 1rem;
   outline: none;
-  width: 100%;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
+}
+
+/* Scroll area for event cards */
+.event-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 32px; /* Leave space above dots */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Space between each card */
+}
+
+/* Optional: you can add smooth scrolling on mobile */
+.event-list::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar */
 }
