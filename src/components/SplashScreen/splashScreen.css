@@ -1,0 +1,35 @@
+/* src/components/SplashScreen/splashScreen.css */
+
+.splash-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1330;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .splash-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+  
+  .splash-title {
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+  }
+  
+  .splash-title .highlight {
+    color: #f25cbd;
+  }
+  
+  .splash-tagline {
+    font-size: 1rem;
+    color: #cfcfcf;
+    margin-top: 8px;
+  }
+  
