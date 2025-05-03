@@ -1,0 +1,94 @@
+/* src/pages/OrderPage/orderPage.css */
+
+.order-page {
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    background-color: #1a1235;
+    min-height: 100vh;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    color: #f25cbd;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+  }
+  
+  .band-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f25cbd;
+    margin: 0.5rem 0 0.2rem;
+  }
+  
+  .date-time {
+    color: #20e0cd;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .order-item {
+    border: 1px solid #f25cbd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .ticket-box {
+    margin-top: 0.5rem;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .qty-btn {
+    background-color: #f25cbd;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .total-label {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+  .total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.2rem;
+  }
+  
+  .order-btn {
+    background-color: #20e0cd;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    margin-bottom: 0.6rem;
+    cursor: pointer;
+  }
+  
+  .back-btn {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+  }
+  

@@ -1,3 +1,5 @@
+// src/pages/HomePage/HomePage.jsx
+
 import React, { useState } from "react";
 import "./homePage.css";
 import { FiSearch } from "react-icons/fi";
@@ -8,10 +10,12 @@ const HomePage = () => {
     const [search, setSearch] = useState("");
     const { events = [], loading, error } = useEventData();
 
-    // Filter using event.name (since it's the band name)
-    const filteredEvents = events.filter((event) =>
-        search.trim() === "" || (event.name || "").toLowerCase().includes(search.toLowerCase())
-    );
+    const filteredEvents = Array.isArray(events)
+        ? events.filter((event) =>
+            search.trim() === "" || (event.name || "").toLowerCase().includes(search.toLowerCase())
+        )
+        : [];
+
 
     return (
         <div className="home">

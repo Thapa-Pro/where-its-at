@@ -3,22 +3,12 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SwipePages from "./components/SwipePages/SwipePages";
+import TicketPage from "./pages/TicketPage/TicketPage";
+import EventPage from "./pages/EventPage/EventPage";
+import OrderPage from "./pages/OrderPage/OrderPage"; // ✅ Import OrderPage
 
 function App() {
-    // State to keep track of current page index
     const [currentPage, setCurrentPage] = useState(0);
-
-    // Example page components (you can customize these)
-    const pages = [
-        <div className="slide" key="welcome">
-            <h1>Welcome</h1>
-            <p>Swipe to see events</p>
-        </div>,
-        <div className="slide" key="events">
-            <h1>Events</h1>
-            <p>Here are your events</p>
-        </div>,
-    ];
 
     return (
         <Router>
@@ -27,12 +17,14 @@ function App() {
                     path="/"
                     element={
                         <SwipePages
-                            pages={pages}
                             currentPage={currentPage}
                             setCurrentPage={setCurrentPage}
                         />
                     }
                 />
+                <Route path="/event/:id" element={<EventPage />} />
+                <Route path="/order" element={<OrderPage />} /> {/* ✅ Add OrderPage route */}
+                <Route path="/ticket" element={<TicketPage />} />
                 <Route path="*" element={<div>404 - Page Not Found</div>} />
             </Routes>
         </Router>
