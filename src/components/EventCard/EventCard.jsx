@@ -1,17 +1,23 @@
+// src/components/EventCard/EventCard.jsx
+
 import React from "react";
 import "./eventCard.css";
+import { useNavigate } from "react-router-dom";
 
 const EventCard = ({ event }) => {
-    const { name, where, price, when } = event;
+    const { name, where, price, when, id } = event;
+    const navigate = useNavigate();
 
-    // Split the date like "21 Mars" -> ["21", "Mars"]
     const [day, rawMonth] = when?.date?.split(" ") || ["??", "???"];
+    const month = rawMonth ? rawMonth.substring(0, 3).toUpperCase() : "???";
 
-    // Take first 3 letters and uppercase them
-    const month = rawMonth?.substring(0, 3).toUpperCase();
+    const handleClick = () => {
+        console.log("Navigating to event ID:", id);
+        navigate(`/event/${id}`);
+    };
 
     return (
-        <div className="event-card">
+        <div className="event-card" onClick={handleClick} style={{ cursor: "pointer" }}>
             <div className="event-date">
                 <span className="day">{day}</span>
                 <span className="month">{month}</span>

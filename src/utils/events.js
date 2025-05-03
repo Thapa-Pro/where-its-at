@@ -1,37 +1,61 @@
+// src/utils/events.js
+
 const eventsData = [
-    {
-      id: 1,
-      title: "Lasse-Stefanz",
-      location: "Kjell Härnqvistsalen",
+  {
+    id: 1,
+    name: "Lasse-Stefanz",
+    where: "Kjell Härnqvistsalen",
+    when: {
       date: "21 MAR",
-      time: "19.00 - 21.00",
-      price: 350
+      from: "19.00",
+      to: "21.00"
     },
-    {
-      id: 2,
-      title: "Pelle trubadur",
-      location: "Pubelipuben",
-      date: "29 MAR",
-      time: "22.00 - 00.00",
-      price: 110
+    price: 400
+  },
+  {
+    id: 2,
+    name: "Pelle trubadur",
+    where: "Pubelipuben",
+    when: {
+      date: "11 APR",
+      from: "21.00",
+      to: "00.00"
     },
-    {
-      id: 3,
-      title: "Kajsas kör",
-      location: "Götaplatsen",
-      date: "10 APR",
-      time: "15.00 - 16.00",
-      price: 99
+    price: 119
+  },
+  {
+    id: 3,
+    name: "Kajsas kör",
+    where: "Götaplatsen",
+    when: {
+      date: "13 DEC",
+      from: "15.00",
+      to: "16.00"
     },
-    {
-      id: 4,
-      title: "Klubb Untz",
-      location: "Din favoritklubb",
-      date: "17 APR",
-      time: "22.00 - du tröttnar",
-      price: 150
-    }
-  ];
-  
-  export default eventsData;
-  
+    price: 0
+  },
+  {
+    id: 4,
+    name: "Klubb Untz",
+    where: "Mörka hörnet",
+    when: {
+      date: "4 JUL",
+      from: "20.00",
+      to: "05.00"
+    },
+    price: 150
+  },
+  {
+    id: 5,
+    name: "Greats symfoniker",
+    where: "Kungliga operan",
+    when: {
+      date: "15 NOV",
+      from: "18.00",
+      to: "20.00"
+    },
+    price: 300
+  }
+];
+
+export default eventsData;

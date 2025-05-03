@@ -1,0 +1,99 @@
+/* src/pages/EventPage/eventPage.css */
+
+.event-page {
+    background-color: #1e1535;
+    color: white;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-family: 'sans-serif';
+}
+
+.event-title {
+    color: #f25cbd;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.event-subtext {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.band-name {
+    color: #f25cbd;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.date-time {
+    color: #3ee0cb;
+    font-weight: 600;
+}
+
+.location {
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.ticket-box {
+    border: 2px solid #f25cbd;
+    border-radius: 4px;
+    width: 220px;
+    margin: 0 auto 1.5rem;
+}
+
+.total-price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 1rem;
+    border-bottom: 2px solid #f25cbd;
+}
+
+.quantity-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.qty-btn {
+    background-color: #f25cbd;
+    color: white;
+    border: none;
+    font-size: 1.4rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.qty {
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 40px;
+    display: inline-block;
+}
+
+.confirm-btn,
+.back-btn {
+    background-color: #38d9c1;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.9rem 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.back-btn {
+    background-color: #555;
+}
