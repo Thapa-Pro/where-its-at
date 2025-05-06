@@ -6,7 +6,14 @@ import useTicketStore from "../../store/ticketStore";
 import "./orderPage.css";
 
 const OrderPage = () => {
-    const { order, updateQuantity, removeFromOrder } = useTicketStore();
+    const {
+        order,
+        updateQuantity,
+        removeFromOrder,
+        generateTickets,
+        resetOrder,
+    } = useTicketStore();
+
     const navigate = useNavigate();
 
     const handleIncrease = (eventId, currentQty) => {
@@ -21,16 +28,18 @@ const OrderPage = () => {
         }
     };
 
+    const handleSendOrder = () => {
+        generateTickets();      // ✅ Generate ticket data
+        resetOrder();           // ✅ Clear cart
+        navigate("/ticket");    // ✅ Go to ticket page
+    };
+
+    const goBack = () => navigate("/");
+
     const total = order.reduce(
         (sum, item) => sum + item.event.price * item.quantity,
         0
     );
-
-    const handleSendOrder = () => {
-        navigate("/ticket");
-    };
-
-    const goBack = () => navigate("/");
 
     return (
         <div className="order-page">
