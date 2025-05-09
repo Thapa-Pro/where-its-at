@@ -91,4 +91,12 @@
     width: 100%;
     cursor: pointer;
   }
+
   
+  .info-text {
+    color: #f25cbd;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+    white-space: pre-line; /* Ensures new lines are respected */
+}
