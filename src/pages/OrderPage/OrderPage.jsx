@@ -3,6 +3,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useTicketStore from "../../store/ticketStore";
+import { motion } from "framer-motion";
 import "./orderPage.css";
 
 const OrderPage = () => {
@@ -29,9 +30,9 @@ const OrderPage = () => {
     };
 
     const handleSendOrder = () => {
-        generateTickets();      // ✅ Generate ticket data
-        resetOrder();           // ✅ Clear cart
-        navigate("/ticket");    // ✅ Go to ticket page
+        generateTickets();
+        resetOrder();
+        navigate("/ticket");
     };
 
     const goBack = () => navigate("/");
@@ -46,23 +47,23 @@ const OrderPage = () => {
             <h2 className="section-title">Order</h2>
 
             {order.length === 0 ? (
-                <p className="info-text">Din varukorg är tom.</p>
+                <p className="info-text">🛒 Din varukorg är tom. Lägg till några biljetter!</p>
             ) : (
                 <>
                     {order.map(({ event, quantity }) => (
-                        <div key={event.id} className="order-item">
+                        <div key={event.id} className="order-item compact">
                             <h3 className="band-name">{event.name}</h3>
                             <p className="date-time">
                                 {event.when?.date} kl {event.when?.from} - {event.when?.to}
                             </p>
 
-                            <div className="ticket-box">
-                                <div className="quantity-controls">
-                                    <button className="qty-btn" onClick={() => handleDecrease(event.id, quantity)}>−</button>
-                                    <span>{quantity}</span>
-                                    <button className="qty-btn" onClick={() => handleIncrease(event.id, quantity)}>+</button>
+                            <div className="ticket-box compact">
+                                <div className="quantity-controls compact">
+                                    <motion.button className="qty-btn" whileTap={{ scale: 0.9 }} onClick={() => handleDecrease(event.id, quantity)}>−</motion.button>
+                                    <span className="qty">{quantity}</span>
+                                    <motion.button className="qty-btn" whileTap={{ scale: 0.9 }} onClick={() => handleIncrease(event.id, quantity)}>+</motion.button>
                                 </div>
-                                <p className="subtotal">
+                                <p className="subtotal compact">
                                     {quantity} × {event.price} = <strong>{quantity * event.price} sek</strong>
                                 </p>
                             </div>
@@ -72,15 +73,15 @@ const OrderPage = () => {
                     <p className="total-label">Totalt värde på order</p>
                     <p className="total">{total} sek</p>
 
-                    <button className="order-btn" onClick={handleSendOrder}>
+                    <motion.button className="order-btn" whileTap={{ scale: 0.95 }} onClick={handleSendOrder}>
                         Skicka order
-                    </button>
+                    </motion.button>
                 </>
             )}
 
-            <button className="back-btn" onClick={goBack}>
+            <motion.button className="back-btn" whileTap={{ scale: 0.95 }} onClick={goBack}>
                 Tillbaka till Events
-            </button>
+            </motion.button>
         </div>
     );
 };

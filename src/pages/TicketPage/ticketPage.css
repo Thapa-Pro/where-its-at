@@ -1,0 +1,91 @@
+/* src/pages/TicketPage/ticketPage.css */
+
+.ticket-page {
+    background: linear-gradient(135deg, #ff89e9, #1a1235);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.ticket-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ticket-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    max-width: 340px;
+    min-width: 300px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    border-top: 8px solid #f25cbd;
+}
+
+.ticket-header {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.2rem;
+}
+
+.ticket-title {
+    font-size: 1.5rem;
+    color: #f25cbd;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.ticket-location, .ticket-info p {
+    font-size: 1.1rem;
+    margin: 0.2rem 0;
+    font-weight: 500;
+}
+
+.barcode {
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
+    background: #333;
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+}
+
+.ticket-id {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #555;
+    text-align: center;
+}
+
+.back-btn {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #38d9c1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: center;
+}
+
+.back-btn:hover {
+    background-color: #2cb3a6;
+}
+
+.back-btn:active {
+    transform: scale(0.95);
+}
