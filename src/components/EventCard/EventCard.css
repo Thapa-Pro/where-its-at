@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0; /* increased spacing between items */
+  padding: 12px 0;
   border-bottom: 1px solid #2d2348;
   gap: 12px;
 }
@@ -18,20 +18,21 @@
   line-height: 1.1;
   padding-top: 4px;
   flex-shrink: 0;
-  color: white; /* ✅ white date text */
+  color: white;
 }
 
 .day {
+  margin-top: 6px;
   display: block;
   font-size: 0.9rem;
-  color: white; /* ✅ white day */
+  color: white;
 }
 
 .month {
   display: block;
   font-size: 0.7rem;
   margin-top: 2px;
-  color: white; /* ✅ white month */
+  color: white;
 }
 
 .event-info {
@@ -39,80 +40,37 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  justify-content: center; /* Align vertically */
 }
 
 .band {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: bold;
   color: #f25cbd;
   margin: 0;
 }
 
 .location {
-  font-size: 0.8rem;
-  font-style: italic;
-  color: #cfcfcf;
-  margin: 0;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+    line-height: 2px; /* Reduce line height */
+    display: inline-block; /* Make it inline to reduce box size */
+    vertical-align: middle; /* Align with band name */
 }
 
+
 .time {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: white;
   margin: 0;
 }
 
 .price {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: bold;
   color: #36e0e0;
+  margin: 0;
   white-space: nowrap;
-}
-
-.book-btn {
-  background-color: #f25cbd;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 8px;
-  width: fit-content;
-  align-self: flex-start;
-}
-
-.book-btn:hover {
-  background-color: #d14aa7;
-}
-.book-btn {
-  background-color: #f25cbd;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 8px;
-  width: fit-content;
-  align-self: flex-start;
-}
-
-.book-btn:hover {
-  background-color: #d14aa7;
-}
-.book-btn {
-  background-color: #f25cbd;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 8px;
-  width: fit-content;
-  align-self: flex-start;
-}
-
-.book-btn:hover {
-  background-color: #d14aa7;
+  align-self: flex-end;
 }

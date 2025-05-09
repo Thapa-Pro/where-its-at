@@ -1,12 +1,39 @@
 // src/pages/TicketPage/TicketPage.jsx
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useTicketStore from "../../store/ticketStore";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
 import Confetti from "react-confetti";
+import JsBarcode from "jsbarcode";
 import "./ticketPage.css";
+
+const BarcodeComponent = ({ text }) => {
+    const barcodeRef = useRef(null);
+
+    useEffect(() => {
+        if (barcodeRef.current) {
+            // Clear previous barcode completely
+            barcodeRef.current.innerHTML = "";
+            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            try {
+                JsBarcode(svg, text, {
+                    format: "CODE128",
+                    lineColor: "#000",
+                    width: 2,
+                    height: 50,
+                    displayValue: true,
+                });
+                barcodeRef.current.appendChild(svg);
+            } catch (error) {
+                console.error("Barcode generation failed:", error);
+            }
+        }
+    }, [text]);
+
+    return <div className="barcode" ref={barcodeRef}></div>;
+};
 
 const TicketPage = () => {
     const { tickets } = useTicketStore();
@@ -46,6 +73,7 @@ const TicketPage = () => {
     return (
         <div className="ticket-page" {...handlers}>
             <Confetti numberOfPieces={250} recycle={false} />
+            <h1 className="enjoy-show">ENJOY YOUR SHOW!</h1>
             <div className="ticket-container">
                 <AnimatePresence initial={false} custom={direction} mode="wait">
                     <motion.div
@@ -58,15 +86,15 @@ const TicketPage = () => {
                     >
                         <div className="ticket-header">🎟️ Biljett</div>
                         <h2 className="ticket-title">{tickets[currentIndex].event.name}</h2>
-                        <p className="ticket-location">{tickets[currentIndex].event.where}</p>
+                        <p className="ticket-location">@ {tickets[currentIndex].event.where}</p>
                         <div className="ticket-info">
                             <p><strong>Datum:</strong> {tickets[currentIndex].event.when?.date}</p>
                             <p><strong>Tid:</strong> {tickets[currentIndex].event.when?.from} - {tickets[currentIndex].event.when?.to}</p>
                             <p><strong>Sektion:</strong> {tickets[currentIndex].section}</p>
                             <p><strong>Sittplats:</strong> {tickets[currentIndex].seat}</p>
-                            <p className="ticket-id">{tickets[currentIndex].id}</p>
                         </div>
-                        <div className="barcode">{tickets[currentIndex].id}</div>
+                        <BarcodeComponent text={tickets[currentIndex].id} />
+                        <p className="ticket-number">Ticket ID: {tickets[currentIndex].id}</p>
                     </motion.div>
                 </AnimatePresence>
                 <button className="back-btn" onClick={() => navigate("/")}>Back to Events</button>
@@ -74,5 +102,4 @@ const TicketPage = () => {
         </div>
     );
 };
-
 export default TicketPage;
