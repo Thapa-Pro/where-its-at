@@ -19,7 +19,7 @@
   
   .splash-title {
     font-size: 2rem;
-    color: white;
+    color: #f25cbd;
     margin: 0;
   }
   
@@ -28,8 +28,8 @@
   }
   
   .splash-tagline {
-    font-size: 1rem;
-    color: #cfcfcf;
+    font-size: 1.5rem;
+    color: #e3d2d2;
     margin-top: 8px;
   }
   

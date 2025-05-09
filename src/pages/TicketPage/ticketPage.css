@@ -1,7 +1,7 @@
 /* src/pages/TicketPage/ticketPage.css */
 
 .ticket-page {
-    background: linear-gradient(135deg, #ff89e9, #1a1235);
+    background: linear-gradient(135deg, #ff89e9, #0e0725);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,7 +9,10 @@
     align-items: center;
     padding: 2rem;
 }
-
+.enjoy-show {
+    margin-top: 0rem;
+    text-align: center;
+}
 .ticket-container {
     display: flex;
     flex-direction: column;
@@ -28,7 +31,7 @@
     margin: auto;
     position: relative;
     z-index: 1;
-    border-top: 8px solid #f25cbd;
+    border-top: 8px solid #f0b6dc;
 }
 
 .ticket-header {
@@ -39,15 +42,25 @@
 }
 
 .ticket-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #f25cbd;
     margin: 0.5rem 0;
     font-weight: bold;
 }
 
-.ticket-location, .ticket-info p {
-    font-size: 1.1rem;
+.ticket-location {
+    font-size: 1.5rem;
+    color: #f25cbd;
+    margin: 0rem 0;
+    font-weight: bold;
+
+}  
+
+
+.ticket-info p {
+    font-size: 1.5rem;
     margin: 0.2rem 0;
+    color: #333;
     font-weight: 500;
 }
 
@@ -63,8 +76,8 @@
     text-align: center;
 }
 
-.ticket-id {
-    font-size: 1rem;
+.ticket-number {
+    font-size: 2rem;
     margin-top: 0.5rem;
     color: #555;
     text-align: center;
